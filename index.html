@@ -2,15 +2,33 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Chatter-Box 2.0</title>
+    <title>Chatter Box 2.0</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Abel" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Chatter-Box 2.0</h1>
-
-
-
+    <header>
+		<section id="top-bar">
+			<h1>Chatter Box 2.0</h1>
+			<div id="from-container">
+				<p>From:</p>
+				<input type="text" placeholder="Your Name Here" id="from">
+			</div>
+		</section>
+	</header>
+    <main>
+        <section id="message-container">
+		    <ul></ul>
+	    </section>
+    </main>
+    <section id="input-container">
+		<div id="user-input">
+			<input type="text" placeholder="Your Message Here" id="user-message">
+			<button id="send">Send</button>
+			<button id="delete">Delete Message<span id="deleteID"></span></button>
+		</div>
+	</section>
 
 
 
@@ -20,5 +38,10 @@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="http://backbonejs.org/backbone.js"></script>
     <script src="app.js"></script>
+    <script type="x-mustache-template" id="chat-template">
+        <p class = "from-div">{{ user }}: </p>
+		<p class = "message-div {{ class }}">{{ message }}</p>
+		<p class = "message-id">id: {{ id }}</p>
+    </script>
 </body>
 </html>
