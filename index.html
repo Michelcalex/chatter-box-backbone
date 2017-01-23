@@ -14,6 +14,7 @@
 			<div id="from-container">
 				<p>From:</p>
 				<input type="text" placeholder="Your Name Here" id="from">
+                <button id="send">Send</button>
 			</div>
 		</section>
 	</header>
@@ -25,7 +26,7 @@
         <section id="input-container">
             <div id="user-input">
                 <input type="text" placeholder="Your Message Here" id="user-message">
-                <button id="send">Send</button>
+                <!--<button id="send">Send</button>-->
                 <button id="delete">Delete Message<span id="deleteID"></span></button>
             </div>
 	    </section>  
@@ -42,7 +43,7 @@
     <script src="app.js"></script>
     <script type="x-mustache-template" id="chat-template">
         <p class = "from-div">{{ user }}: </p>
-		<p class = "message-div {{ class }}">{{ message }}</p>
+		<p>{{ message }}</p>
 		<p class = "message-id">id: {{ id }}</p>
     </script>
 </body>
