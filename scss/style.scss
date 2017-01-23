@@ -1,10 +1,164 @@
 /* Include Foundation */
 
-@import '../../node_modules/foundation-sites/scss/foundation';
+@import '../../../../node_modules/foundation-sites/scss/foundation';
 
 @include foundation-global-styles;
 @include foundation-grid;
 
-body {
-    background-color: teal;
+
+$md-screen: 768px;
+
+$header-color: #47B475;
+$primary-color: #498467;
+$secondary-color: #A6D3A0;
+$border-color: #ccc;
+$heading-txt: 'Bungee Shade', cursive;
+$primary-txt: 'Abel', sans-serif;
+
+html, body {
+	margin: 0;
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	font-family: $primary-txt;
+}
+
+header {
+	background-color: $header-color;
+	padding: 0px 10px;
+	
+	#top-bar {
+		display: flex;
+		flex-direction: column;
+		padding: 10px 0px;
+
+
+		@include breakpoint($md-screen) {
+			flex-direction: row;
+			justify-content: space-between;
+			margin-right: auto;
+			margin-left: auto;
+			max-width: 75rem;
+		}
+		
+		h1 {
+			font-family: $heading-txt;
+			font-size: 2.5rem;
+			color: white;
+			line-height: 2.7rem;
+			margin-bottom: 0.75rem;
+			margin-top: 0px;
+			text-align: center;
+
+			@include breakpoint($md-screen) {
+				margin-bottom: 0px;
+				line-height: 1.4;
+			}
+		}
+		
+		#from-container{
+			
+			p {
+				margin-bottom: 0px;
+			}
+			
+			#from {
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+
+#message-container {
+	@include grid-row();
+	height: 100%;
+	
+	ul {
+		@include grid-column(12);
+		margin: 0;
+		list-style-type: none;
+		margin: 20px 0;
+		padding: 1rem;
+		height: calc(100% - 240px);
+		overflow-y: scroll;
+		@include breakpoint($md-screen) {
+			border: 2px solid $border-color;
+		}
+		
+		li {
+			display: flex;
+			border-bottom: 2px solid #e6e6e6;
+    		padding: .5rem;
+			
+			.from-div {
+				font-weight: bold;
+				margin-right: 20px;
+			}
+			
+			.highlight {
+				background-color: #FFFB77;
+			}
+			
+			.message-id {
+				font-weight: bold;
+				margin-left: auto;
+			}
+			
+			.emoji img {
+				width: 32px;
+				height: 32px;
+			}
+			
+			.image img {
+				max-width: 400px;
+			}
+		}
+		
+		li:hover, li:focus {
+			cursor: pointer;
+			background: #F5F5F5;
+		}
+		
+		li:last-child {
+			border-bottom: none;
+    		margin-bottom: 0;
+		}
+	}
+}
+
+#input-container{
+	background-color: $header-color;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	padding: 0px 10px;
+	
+	#user-input {
+		@include grid-row();
+		display: flex;
+		align-items: center;
+		height: 100px;
+		
+		input {
+			margin-bottom: 0px;
+			height: 50px;
+
+			@include breakpoint($md-screen) {
+				margin: 0px;
+			}
+		}
+		
+		button {
+			margin-left: 30px;
+			background-color: white;
+			padding: 1rem;
+			border: 1px solid $border-color;
+			width: 33.5%;
+
+			@include breakpoint($md-screen) {
+				margin-right: 0px;
+			}
+		}
+	}
 }
