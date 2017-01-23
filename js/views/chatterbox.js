@@ -5,11 +5,17 @@ module.exports = Backbone.View.extend ({
         //this.model.on('remove', this.render, this);
     },
 
-    events:  {
+    events: function() {
 
     },
 
-    render: {
+    render: function() {
+        const template = document.querySelector('#chat-template').innerHTML;
 
+        this.el.querySelector('#message-list').innerHTML = '';
+        const li = document.createElement('li');
+    
+        const parent = this.el.querySelector('#message-list');
+        parent.appendChild(li);
     },
 });
