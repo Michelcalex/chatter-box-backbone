@@ -1,4 +1,4 @@
-const ChatterboxList = require('./models/chatterbox')
+const ChatterboxList = require('./models/chatterboxlist')
 const ChatterboxView = require('./views/chatterbox');
 
 window.addEventListener('load', function() {
