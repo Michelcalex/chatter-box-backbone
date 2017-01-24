@@ -1,12 +1,17 @@
 module.exports = Backbone.Model.extend( {
     defaults: {
-        user: 'unknown user',
+        from: 'unknown user',
         message: 'message goes here',
-        id: 0,
+        id: null,
+        added: null,
     },
 
     updateUser(userName) {
         //Important: I am passing in the string, NOT accessing the DOM here. 
-        this.set('user', userName); 
-    }
+        this.set('from', userName); 
+    },
+
+    updateMessage(userMessage) {
+        this.set('message', userMessage);
+    },
 }); 

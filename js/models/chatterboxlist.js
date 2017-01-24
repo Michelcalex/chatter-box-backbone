@@ -4,12 +4,19 @@ module.exports = Backbone.Collection.extend({
     
     model: ChatterboxModel, 
 
-    createNew: function(userName) {
+    initialize: function() {
+        this.fetch();
+    },
+
+    createNew: function(userName, userMessage) {
         console.log('creating new user');
         //Create a new model and set it's name
         //Add the new model to the collection
-        const newChatterboxModel = new ChatterboxModel();
-        newChatterboxModel.set('user', userName);
-        this.add(newChatterboxModel);
+        const newChatterbox = new ChatterboxModel();
+        newChatterbox.updateUser(userName);
+        newChatterbox.updateMessage(userMessage);
+        this.add(newChatterbox);
+        newChatterbox.save();
     },
+    
 });
