@@ -17,7 +17,7 @@ module.exports = Backbone.Collection.extend({
         newChatterbox.updateUser(userName);
         newChatterbox.updateMessage(userMessage);
         newChatterbox.updateId(messageId);
-        this.add(newChatterbox);
+        // this.add(newChatterbox);
         newChatterbox.save();
     },
 

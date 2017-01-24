@@ -9,7 +9,7 @@ Backbone.sync = function(method, model) {           //this model parameter is al
         const request = new XMLHttpRequest();
         request.open('POST', 'http://api.queencityiron.com/chats');
         request.addEventListener('load', function() {
-        //    model.trigger('change');
+        //model.trigger('change');
         //model.collection.fetch();
         });
 
@@ -30,14 +30,13 @@ Backbone.sync = function(method, model) {           //this model parameter is al
         request.addEventListener('load', function() {
             const response = JSON.parse(request.responseText);
             console.log('fetching here');
-            console.log(response);
             for(let i = 0; i < response.chats.length; i++) {
                 let chat = response.chats[i];
                 let msg = new ChatterboxModel();
                 msg.set('from', response.chats[i].from);
                 msg.set('message', response.chats[i].message);
                 msg.set('id', response.chats[i].id);
-                model.add(msg)
+                model.add(msg);
 
 
 
