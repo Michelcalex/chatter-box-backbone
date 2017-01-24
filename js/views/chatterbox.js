@@ -1,6 +1,6 @@
 module.exports = Backbone.View.extend ({
     initialize: function() {
-        this.model.on('read', this.render, this);
+        //this.model.on('read', this.render, this);
         this.model.on('change', this.render, this);
         this.model.on('add', this.render, this);    
         // this.model.on('remove', this.render, this);
@@ -12,7 +12,6 @@ module.exports = Backbone.View.extend ({
     },
 
     sendUserMessage: function() {
-        console.log('message sent');
         const newUser = this.el.querySelector('#from').value;
         const newMessage = this.el.querySelector('#user-message').value;
         this.model.createNew(newUser, newMessage); 

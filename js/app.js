@@ -10,8 +10,8 @@ Backbone.sync = function(method, model) {           //this model parameter is al
         request.open('POST', 'http://api.queencityiron.com/chats');
         request.addEventListener('load', function() {
         //    model.trigger('change');
-            model.collection.fetch();
-        })
+        //model.collection.fetch();
+        });
 
         let message = {
             from: model.get('from'),
