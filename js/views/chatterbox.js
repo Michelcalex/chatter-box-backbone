@@ -18,7 +18,9 @@ module.exports = Backbone.View.extend ({
         this.model.createNew(newUser, newMessage); 
     },
 
-    
+    deleteMessage: function () {
+        console.log('delete message');
+    },
 
     render: function() {
         const template = document.querySelector('#chat-template').innerHTML;
@@ -35,6 +37,7 @@ module.exports = Backbone.View.extend ({
                 {
                     from: m.get('from'),   //current model, grab the name. You don't have to say this, because you made a variable m above that does this. 
                     message: m.get('message'),
+                    id: m.get('id'),
                 }
             );
             

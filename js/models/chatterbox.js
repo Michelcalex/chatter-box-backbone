@@ -14,4 +14,8 @@ module.exports = Backbone.Model.extend( {
     updateMessage(userMessage) {
         this.set('message', userMessage);
     },
+
+    updateId(messageId) {
+        this.set('id', messageId)
+    },
 }); 
