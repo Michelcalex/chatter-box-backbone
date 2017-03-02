@@ -21,10 +21,8 @@ module.exports = Backbone.View.extend({
         const newUser = this.el.querySelector('#from').value;
         const newMessage = this.el.querySelector('#user-message').value;
         this.model.createNew(newUser, newMessage);
-    },
-
-    deleteMessage: function () {
-        console.log('delete message');
+        newUser.innerHTML = ' ';
+        newMessage.innerHTML = ' ';
     },
 
     render: function () {
