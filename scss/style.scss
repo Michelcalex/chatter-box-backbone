@@ -140,12 +140,12 @@ header {
 		display: flex;
 		align-items: center;
 		height: 100px;
-		width: 75%;
 		
 		input {
 			margin-bottom: 0px;
 			height: 50px;
 			padding-left: 10px;
+			width: 100%;
 
 			@include breakpoint($md-screen) {
 				margin: 0px;
@@ -158,6 +158,7 @@ header {
 			padding: 1rem;
 			border: 1px solid $border-color;
 			width: 33.5%;
+			font-size: 0.8rem;
 
 			@include breakpoint($md-screen) {
 				margin-right: 0px;
